@@ -1,0 +1,66 @@
+
+.chosen {
+    padding: 160px 0 0 0;
+
+    @media (max-width: 768px) { padding: 64px 0 0 0 }
+
+    h2 {
+        margin-bottom: 24px;
+        max-width: 760px;
+
+        @media (max-width: 575px) {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: $drawYourSword;
+        margin-bottom: 48px;
+        max-width: 760px;
+
+        @media (max-width: 575px) {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+        }
+    }
+
+    &__table {
+        display: flex;
+        justify-content: space-between;
+
+        overflow-x: scroll;
+        @include make-container(1150px);
+        &::-webkit-scrollbar { display: none }
+
+        &-item {
+            padding: 24px 16px;
+            background-color: #FBF8F3;
+            border-radius: 16px;
+
+            min-height: 220px;
+            min-width: 172px;
+
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+
+            &:not(:last-child) { margin-right: 24px }
+
+            svg {
+                width: 64px;
+                height: 64px;
+
+                fill: transparent;
+            }
+
+            h5 {
+                margin-top: auto;
+            }
+        }
+    }
+}

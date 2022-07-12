@@ -1,0 +1,99 @@
+.proposal {
+    padding: 160px 0 0 0;
+    
+    @media (max-width: 768px) { padding: 64px 0 0 0 }
+
+    &--credit {
+        .proposal__wrapper { background-color: #F0E5D2 }
+    }
+    
+    &__wrapper {
+        display: flex;
+        align-items: center;
+            
+        background: #9BC1BC;
+        border-radius: 24px;
+
+        padding: 64px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            box-sizing: border-box;
+
+            padding: 64px 36px 36px;
+            width: 100%;
+        }
+
+        @media (max-width: 575px) {
+            padding: 36px;
+        }
+
+        &-illustration {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+
+            @media (max-width: 768px) { margin-top: 48px }
+        }
+
+        main {
+            width: 100%;
+            max-width: 700px;
+            margin-right: 48px;
+
+            display: flex;
+            flex-direction: column;
+    
+            @media (max-width: 768px) {
+                max-width: 340px;
+                margin-right: 0;
+            }
+
+            h2 {
+                margin-bottom: 15px;
+                
+                @media (max-width: 575px) {
+                    font-size: 24px;
+                    margin-bottom: 12px;
+                }
+
+                @media (max-width: 350px) {
+                    font-size: 20px;
+                }
+            }
+    
+            p {
+                margin-bottom: 24px;
+                opacity: .75;
+                
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;  
+
+                @media (max-width: 575px) {
+                    font-size: 14px;
+                }
+            }
+
+            a, button {
+                @media (max-width: 575px) {
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+
+                    font-size: 16px;
+                    padding: 16px 0;
+                }
+                
+                @media (max-width: 350px) {
+                    font-size: 14px;
+                    padding: 12px 0;
+                }
+            }
+        }
+    }
+}

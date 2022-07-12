@@ -1,0 +1,12 @@
+$satinDeepBlack: #1B2021;
+$drawYourSword: #6E7179;
+$orangeRiver: #F29441;
+$gnarlsGreen: #06784F;
+
+:root {
+    --header-height: 125px;
+    
+    @media (max-width: 1024px) {
+        --header-height: 72px;
+    }
+}

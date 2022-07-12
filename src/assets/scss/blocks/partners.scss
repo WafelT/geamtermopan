@@ -1,0 +1,39 @@
+.partners {
+    padding: 160px 0 0 0;
+    
+    @media (max-width: 768px) {
+        padding: 64px 0 0 0;
+        .slider__marker { display: none }
+    }
+    
+    h2 {
+        margin-bottom: 24px;
+        @media (max-width: 575px) { font-size: 24px }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__slider {
+        width: 100%;
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+
+            .swiper-slide {
+                display: flex;
+                max-width: fit-content;
+                box-sizing: border-box;
+
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

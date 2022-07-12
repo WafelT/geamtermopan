@@ -1,0 +1,99 @@
+.messenger-widget {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1024px) { display: none }
+
+    &.active {
+        .messenger-widget__btn {
+            background-color: #30343F;
+            .messenger-widget__btn-icon { opacity: 0 }
+            .messenger-widget__btn-close { opacity: 1 }
+        }
+
+        .messenger-widget__container {
+            opacity: 1;
+            transform: translateY(0);
+            z-index: 20;
+            
+            a {
+                margin-bottom: 10px;
+                visibility: visible;
+            }
+        }
+    }
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+
+        opacity: 0;
+        transition: .4s;
+        transform: translateY(20px);
+
+        a {
+            width: 56px;
+            height: 56px;
+    
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            
+            transition: .4s;
+            background-color: #eaeaee;
+            margin-bottom: 10px;
+
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    &__btn {
+        padding: 0;
+        background-color: $gnarlsGreen;
+
+        width: 56px;
+        height: 56px;
+
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        &-close {
+            width: 24px;
+            height: 24px;
+
+            stroke: white;
+            opacity: 0;
+        }
+        svg {
+            transition: .4s;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        &-icon {
+            width: 32px;
+            height: 32px;
+        }
+        &:hover { background-color: #0C5C40 }
+    }
+}

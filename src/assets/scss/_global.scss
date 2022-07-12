@@ -1,0 +1,265 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+select {
+    outline: none;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h4 { font-size: 1.4em }
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    padding: 0;
+}
+
+input:not([type=checkbox]):not([type=radio]), textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+input:focus, textarea:focus, button:focus { outline: none }
+
+h1 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 125%;
+
+    @media (max-width: 575px) {
+        font-size: 36px;
+    }
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 133%;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 133%;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.none { display: none !important }
+
+.page { 
+    position: relative; 
+    overflow: hidden;
+
+    margin-top: var(--header-height);
+}
+
+.container__1150px {
+    @include make-container(1150px);
+}
+
+.g-orange-btn {
+    padding: 16px 36px;
+    border-radius: 16px;
+
+    display: flex;
+    width: fit-content;
+
+    color: white;
+    background-color: $orangeRiver;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    transition: .4s background-color;
+    &:hover { background-color: #D8814E }
+}
+
+.g-green-btn {
+    padding: 16px 36px;
+    border-radius: 16px;
+
+    display: flex;
+    width: fit-content;
+
+    color: white;
+    background-color: $gnarlsGreen;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    transition: .4s background-color;
+    &:hover { background-color: #0C5C40 }
+}
+
+.g-line-title {
+    h2 {
+        position: relative;
+        
+        display: flex;
+        flex-direction: column;
+        
+        &::after {
+            content: "";
+            display: block;
+            
+            width: 96px;
+            height: 2px;
+            
+            margin-top: 24px;
+            background-color: #F0E5D2;
+        }
+    }
+}
+
+.g-input {
+    width: 100%;
+    position: relative;
+
+    border: 1px solid #D6D6D9;
+    background-color: white;
+    border-radius: 16px;
+
+    transition: .4s;
+    box-sizing: border-box;
+
+    &:not(:first-child) { margin-top: 25px }
+
+    input {
+        border: none;
+        background-color: transparent;
+        box-sizing: border-box;
+        padding: 28px 20px 8px;
+
+        font-size: 16px;
+        color: #1A1A1A;
+        width: 100%;
+    }
+
+    label {
+        transition: .4s;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        font-size: 14px;
+        line-height: 160%;
+        color: #828A99;
+
+        padding: 0 0 0 20px;
+
+        text-overflow: clip;
+        cursor: text;
+        pointer-events: none;
+
+        white-space: nowrap;
+        display: inline-block;
+        text-overflow: ellipsis;
+        width: auto;
+        overflow: hidden;
+
+        b { color: #BF4545 }
+    }
+
+    &:focus-within { border-color: #9BC1BC }
+
+    input:focus + label {
+        font-size: 12px;
+        line-height: 1;
+
+        top: 31%;left: 0;
+    }
+
+    &.input--filled {
+        label {
+            font-size: 12px;
+            line-height: 1;
+    
+            top: 31%;left: 0;
+        }
+    }
+
+    input[data-validate-field='tel'] {
+        &::placeholder {
+            transition: .4s;
+            opacity: 0;
+            color: $satinDeepBlack;
+        }
+        
+        &:focus {
+            &::placeholder { opacity: 1 }
+        }
+    }
+
+    &.g-input-error {
+        border-color: #BF4545;
+        .g-input__hint {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        z-index: -5;
+
+        color: #BF4545;
+        line-height: 180%;
+        opacity: 0;
+
+        font-weight: 400;
+        font-size: 12px;
+        transition: .6s;
+
+        transform: translateY(100%);
+    }
+}
+
+.slider__marker {
+    margin: 24px auto 0;
+}
+
+.lozad--disabled {
+    opacity: 0;
+    transition: .4s;
+}
+
+.loaded {
+    opacity: 1;
+}

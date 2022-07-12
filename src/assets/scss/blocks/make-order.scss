@@ -1,0 +1,76 @@
+.make-order {
+    padding: 160px 0 0 0;
+
+    @media (max-width: 768px) { padding: 64px 0 0 0 }
+
+    h2 {
+        margin-bottom: 20px;
+        @media (max-width: 575px) { font-size: 24px }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: $drawYourSword;
+        margin-bottom: 24px;
+
+        @media (max-width: 575px) { font-size: 14px }
+    }
+
+    &__wrapper {
+        background-color: #F0E5D2;
+        border-radius: 24px;
+
+        display: flex;
+        overflow: hidden;
+
+        @media (max-width: 768px) { flex-direction: column-reverse }
+
+        main {
+            padding: 100px 30px 100px 100px;
+            box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 1150px) {
+                padding: 50px;
+                min-width: 460px;
+            }
+            @media (max-width: 768px) { min-width: initial }
+            @media (max-width: 575px) { padding: 24px }
+
+            form {
+                max-width: 300px;
+                .g-input { margin-bottom: 24px }
+                button { width: 100% }
+                @media (max-width: 575px) {
+                    button {
+                        padding: 16px 0;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                }
+
+                @media (max-width: 350px) {
+                    button { font-size: 14px }
+                }
+            }
+        }
+
+        &-picture {
+            width: 100%;
+            height: auto;
+            max-width: 490px;
+
+            @media (max-width: 768px) {
+                max-width: none;
+            }
+        }
+    }
+}

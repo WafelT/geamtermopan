@@ -1,0 +1,59 @@
+@import "vars";
+@import "mixins";
+
+html { scroll-behavior: smooth }
+
+body {
+    font-weight: 400;
+    font-size: 20px;
+    
+    min-width: 320px;
+    overflow: auto;
+
+    font-family: 'Onest', sans-serif;
+    color: $satinDeepBlack;
+}
+
+.m-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    @media (max-width: 1300px) { 
+        overflow: hidden;
+        position: fixed;
+
+        .header {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 50;
+            top: 0;
+
+            .menu { display: flex }
+        }
+    }
+}
+
+@import 'fonts';
+@import 'global';
+
+@import "./limbs/header.scss";
+@import "./limbs/footer.scss";
+
+@import "./blocks/preview.scss";
+@import "./blocks/places.scss";
+@import "./blocks/products-preview.scss";
+@import "./blocks/benefits.scss";
+@import "./blocks/chosen.scss";
+@import "./blocks/partners.scss";
+@import "./blocks/proposal.scss";
+@import "./blocks/mobile-menu.scss";
+@import "./blocks/lang-switcher.scss";
+@import "./blocks/work-scheme.scss";
+@import "./blocks/make-order.scss";
+@import "./blocks/burger.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/messenger-widget.scss";
+@import "./blocks/call-menu.scss";

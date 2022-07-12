@@ -1,0 +1,37 @@
+.lang-switcher {
+    width: fit-content;
+
+    border-radius: 10px;
+    background-color: white;
+    
+    transition: .4s;
+    
+    &--dk {
+        margin: 0 24px 0 auto;
+    }
+
+    &--mb {
+        background-color: #F2F3F7;
+    }
+
+    button, a {
+        background-color: transparent;
+        padding: 7px 9px;
+        
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+
+        color: #30343F;
+        display: none;
+
+        transition: .4s;
+
+        &.active { display: flex }
+    }
+
+    &:hover {
+        background-color: $orangeRiver;
+        button { color: white }
+    }
+}

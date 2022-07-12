@@ -1,0 +1,201 @@
+.modal {
+    position: fixed;
+    top: 0;bottom: 0;
+    right: 0;left: 0;
+
+    background-color: rgba(#0F1826, .8);
+
+    width: 100%;
+    height: 100%;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    transition: .6s ease;
+    opacity: 0;
+    z-index: -1;
+
+    &::-webkit-scrollbar { display: none }
+
+    &.open {
+        opacity: 1;
+        z-index: 100;
+
+        .modal__container { transform: scale(1) }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+
+        width: 100%;
+        max-width: 360px;
+        margin: auto;
+
+        position: relative;
+        box-sizing: border-box;
+
+        transition: .6s ease;
+        transform: scale(0);
+
+        & > *:last-child { margin-bottom: 0 }
+        & > *:first-child { margin-top: 0 }
+    }
+
+    &__close {
+        display: flex;
+        border-radius: 9999px;
+        padding: 6px;
+
+        width: fit-content;
+        height: fit-content;
+
+        margin-left: 10px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            transition: .4s;
+            stroke: #30343F;
+        }
+
+        &:hover {
+            svg { transform: rotate(-90deg) }
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+
+            padding: 16px;
+            background-color: $gnarlsGreen;
+            border-radius: 16px;
+
+            width: 100%;
+            color: white;
+            transition: .4s;
+
+            &:hover { background-color: #0C5C40 }
+        }
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 28px 24px;
+    }
+
+    form {
+        padding: 0 24px 24px;
+
+        .contact-form-submit {
+            width: 100%;
+            margin-top: 16px;
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    main {
+        padding: 0 24px 24px;
+        
+        p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+
+            margin-bottom: 16px;
+            color: $satinDeepBlack;
+        }
+    }
+
+    &__policy {
+        display: flex;
+        width: 100%;
+        
+        box-sizing: initial;
+        margin-top: 34px;
+
+        input[type=checkbox] { display: none }
+
+        label {
+            display: flex;
+            line-height: 1;
+
+            p { 
+                font-size: 14px;
+                color: $drawYourSword;
+                line-height: 140%;
+
+                user-select: none;
+                cursor: pointer;
+                max-width: 375px;
+                
+                transition: .4s;
+
+                a {
+                    text-decoration: underline;
+                    transition: .4s;
+
+                    &:hover { color: $orangeRiver }
+                }
+
+                @media (max-width: 992px) { max-width: 450px }
+                @media (max-width: 350px) { font-size: 13px }
+            }
+        }
+        
+        input[type=checkbox] + label:before {
+            content: "";
+            display: inline-block;
+
+            max-width: 22px;
+            width: 100%;
+            height: 22px;
+
+            border: 1px solid #D6D6D9;
+            border-radius: 9999px;
+
+            margin-right: 10px;
+            box-sizing: border-box;
+            transition: .4s;
+            cursor: pointer;
+
+            background-size: .6em .5em;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        input[type=checkbox]:checked + label::before {
+            background-image: url('./../images/svg/check-policy.svg');
+            background-color: #06784F; 
+            border-color: #06784F;
+        }
+
+        input[type=checkbox]:checked + label p {
+            color: $satinDeepBlack;
+        }
+
+        &.policy-error {
+            p { color: #922B21 }
+            &::before { border-color: #922B21 !important }
+        }
+    }
+
+}

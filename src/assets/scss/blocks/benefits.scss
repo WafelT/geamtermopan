@@ -1,0 +1,68 @@
+.benefits {
+    padding: 160px 0 0 0;
+
+    @media (max-width: 768px) { padding: 64px 0 0 0 }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__slider {
+        overflow: initial !important;
+        max-width: 100%;
+        
+        .swiper-wrapper {
+            .swiper-slide {
+                width: 100%;
+                max-width: 368px;
+                
+                @media (max-width: 575px) { max-width: 280px }
+
+                picture {
+                    width: 200px;
+                    height: 200px;
+
+                    display: inline-flex;
+                    margin-bottom: 10px;
+
+                    img {
+                        max-width: 100%;
+                        width: auto;
+                        height: auto;
+
+                        margin: auto auto 0 0;
+                    }
+
+                    
+                    @media (max-width: 575px) {
+                        width: 140px;
+                        height: 140px;
+
+                        img {
+                            max-height: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+
+                h4 {
+                    margin-bottom: 10px;
+
+                    @media (max-width: 575px) {
+                        font-size: 16px;
+                    }
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 155%;
+
+                    color: $drawYourSword;
+                    max-width: 305px;
+                }
+            }
+        }
+    }
+}

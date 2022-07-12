@@ -1,0 +1,188 @@
+.footer {
+    margin: 160px 0 0 0;
+    
+    background-color: #F2F3F7;
+    padding: 48px 0;
+    
+    @media (max-width: 768px) {
+        margin: 64px 0 0 0;
+        padding: 24px 0;
+    }
+
+    &__links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        grid-gap: 24px;
+        padding: 0 0 24px 0;
+
+        border-bottom: 1px solid rgba(214, 214, 217, 0.5);
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+        
+        &-column {
+            display: flex;
+            flex-direction: column;
+            
+            width: 100%;
+            max-width: 368px;
+            
+            @media (max-width: 768px) {
+                &:not(&.footer__links-column--mb) { display: none }
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                &:not(:last-child) { margin-bottom: 24px }
+                
+                a, li {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 150%;
+
+                    width: fit-content;
+                    transition: .4s;
+
+                    &:first-child { color: #ACAEB2 }
+                    &:not(:last-child) { margin-bottom: 8px }
+                    &:hover { color: $drawYourSword }
+                }
+            }
+
+            &-pages {
+                display: flex;
+                flex-direction: column;
+
+                margin-bottom: 16px;
+
+                a, li {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 150%;
+                    
+                    color: $satinDeepBlack;
+                    transition: .4s;
+
+                    &:not(:last-child) { margin-bottom: 8px }
+                    &:hover { color: $drawYourSword }
+                }
+            }
+
+            &-icons {
+                display: flex;
+                align-items: center;
+
+                margin-bottom: 16px;
+
+                img {
+                    &:not(:last-child) { margin-right: 10px }
+                }
+
+                @media (max-width: 768px) {
+                    width: fit-content;
+                    margin: 0 auto 16px;
+                }
+            }
+
+            &-phone {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+
+                margin-bottom: 16px;
+                transition: .4s;
+
+                &:hover { color: $drawYourSword }
+            }
+
+            &-mail {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+
+                color: $orangeRiver;
+                margin-bottom: 16px;
+
+                &:hover { text-decoration: underline }
+            }
+
+            &-socials {
+                display: flex;
+       
+                @media (max-width: 768px) {
+                    width: fit-content;
+                    margin: 0 auto;
+                }
+
+                a {
+                    display: flex;
+
+                    padding: 12px;
+                    border-radius: 9999px;
+                    background: rgba(214, 214, 217, 0.5);
+
+                    transition: .6s;
+                    & > * { transition: .6s }
+
+                    &:not(:last-child) { margin-right: 12px }
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                        
+                        fill: $satinDeepBlack;
+                    }
+
+                    &:hover {
+                        background-color: $orangeRiver;
+                        svg { fill: white }
+                    }
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 24px 0 0 0;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            margin: 0 auto;
+
+            flex-direction: column;
+        }
+
+        span, p {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+
+            color: $drawYourSword;
+        }
+
+        p {
+            @media (max-width: 768px) {
+                margin-top: 12px;
+                font-size: 14px;
+            }
+
+            a {
+                color: $orangeRiver;
+                text-decoration: underline;
+                transition: .4s;
+
+                &:hover { color: #D8814E }
+            }
+        }
+    }
+}

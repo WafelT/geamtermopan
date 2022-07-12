@@ -1,0 +1,94 @@
+.places {
+    padding: 48px 0 64px 0;
+    
+    @media (max-width: 575px) { padding: 24px 0 24px 0 }
+
+    &__table {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 64px 46px;
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-gap: 24px;
+
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            &-img {
+                border-radius: 12px;
+                margin-bottom: 24px;
+
+                max-width: 100%;
+                width: 100%;
+
+                height: auto;
+                min-height: 300px;
+
+                background-repeat: no-repeat;
+                background-size: auto auto;
+                background-position: 50% 50%;
+
+                @media (max-width: 768px) { max-height: none }
+                @media (max-width: 400px) {
+                    margin-bottom: 12px;
+                    min-height: 220px;
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+
+                margin-bottom: 10px;
+                width: fit-content;
+
+                @media (max-width: 400px) { margin-bottom: 4px }
+                
+                span {
+                    font-weight: 600;
+                    margin-right: 10px;
+
+                    @media (max-width: 350px) { font-size: 18px }
+                }
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+
+                    stroke: $satinDeepBlack;
+                    fill: transparent;
+                    
+                    padding: 5px;
+                    border: 1px solid #D6D6D9;
+                    border-radius: 9999px;
+
+                    transition: .4s;
+                }
+
+                &:hover {
+                    svg {
+                        background-color: $orangeRiver;
+                        border-color: $orangeRiver;
+
+                        stroke: white;
+                    }
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 150%;
+                
+                color: $drawYourSword;
+                @media (max-width: 400px) { font-size: 14px }
+            }
+        }
+    }
+}

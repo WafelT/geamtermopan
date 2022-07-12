@@ -1,0 +1,27 @@
+<div class="modal modal--consultation" data-modal="consultation">
+    <div class="modal__container">
+        <header>
+            <h4>Заказать консультацию</h4>
+            <button class="modal__close modal-close-btn"><svg><use xlink:href="./assets/images/svg/sprite.svg#closeIcon"></use></svg></button>
+        </header>
+        <form action="/" class="contact-form">
+            <div class="g-input">
+                <input autocomplete="off" type="text" data-validate-field="name" required>
+                <label for="name">Полное имя</label>
+                <div class="g-input__hint">Это поле обязательное</div>
+            </div>
+            <div class="g-input">
+                <input autocomplete="off" type="tel" data-validate-field="tel" placeholder="+_ (___) __-__-___" required>
+                <label for="name">Номер телефона<b>*</b></label>
+                <div class="g-input__hint">Это поле обязательное</div>
+            </div>
+            <div class="modal__policy contact-form__wrapper-form-policy">
+                <input id="policyCheckboxConsultation" type="checkbox" data-validate-field="checkbox">
+                <label for="policyCheckboxConsultation">
+                    <p>Я согласен с условиями и <a href="#">политикой конфиденциальности</a></p>
+                </label>
+            </div>
+            <button class="contact-form-submit g-orange-btn" type="submit">Отправить заявку</button>
+        </form>
+    </div>
+</div>
