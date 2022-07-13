@@ -6,17 +6,36 @@ const autoprefixer = require("gulp-autoprefixer");
 const cssbeautify = require("gulp-cssbeautify");
 const removeComments = require('gulp-strip-css-comments');
 const rename = require("gulp-rename");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
+const imagemin = require('gulp-imagemin');
 const cssnano = require("gulp-cssnano");
 const concat = require("gulp-concat");
 const plumber = require("gulp-plumber");
 const panini = require("panini");
-const imagemin = require("gulp-imagemin");
 const del = require("del");
 const notify = require("gulp-notify");
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
+
+// import {src, dest} from 'gulp';
+// import gulp from 'gulp';
+// import autoPrefixer from 'gulp-autoprefixer';
+// import sass from 'gulp-sass'
+// import cssnano from 'gulp-cssnano'
+// import removeComments from 'gulp-strip-css-comments'
+// import cssbeautify from 'gulp-cssbeautify'
+// import concat from 'gulp-concat'
+// import plumber from 'gulp-plumber'
+// import panini from 'panini';
+// import imagemin from 'gulp-imagemin';
+// import del from 'del'
+// import notify from 'gulp-notify'
+// import rename from 'gulp-rename';
+// import webpack from 'webpack';
+// import webpackStream from "webpack-stream";
+// import browserSync from "browser-sync";
+// browserSync.create();
 
 
 /* Paths */
@@ -170,7 +189,7 @@ function images(cb) {
     return src(path.src.images)
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 95, progressive: true}),
+            imagemin.jpegtran({quality: 95, progressive: true}),
             imagemin.optipng({optimizationLevel: 5}),
             imagemin.svgo({
                 plugins: [
