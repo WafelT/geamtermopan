@@ -18,26 +18,6 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
 
-// import {src, dest} from 'gulp';
-// import gulp from 'gulp';
-// import autoPrefixer from 'gulp-autoprefixer';
-// import sass from 'gulp-sass'
-// import cssnano from 'gulp-cssnano'
-// import removeComments from 'gulp-strip-css-comments'
-// import cssbeautify from 'gulp-cssbeautify'
-// import concat from 'gulp-concat'
-// import plumber from 'gulp-plumber'
-// import panini from 'panini';
-// import imagemin from 'gulp-imagemin';
-// import del from 'del'
-// import notify from 'gulp-notify'
-// import rename from 'gulp-rename';
-// import webpack from 'webpack';
-// import webpackStream from "webpack-stream";
-// import browserSync from "browser-sync";
-// browserSync.create();
-
-
 /* Paths */
 const srcPath = 'src/';
 const distPath = 'dist/';

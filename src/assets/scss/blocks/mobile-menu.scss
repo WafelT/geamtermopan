@@ -89,7 +89,7 @@
                 flex-direction: column;
                 
                 &.active {
-                    main {
+                    .mobile-menu__nav-item-header {
                         a, span {
                             color: $gnarlsGreen;
                         }
@@ -105,7 +105,7 @@
                     }
                 }
 
-                main {
+                .mobile-menu__nav-item-header {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
